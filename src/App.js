@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Nav from "./Nav";
 import RoutesList from "./RoutesList";
@@ -8,12 +8,13 @@ import axios from "axios";
 function App() {
   const [dogs, setDogs] = useState([]);
 
-  async function getDogs() {
-    const response = await axios.get("http://localhost:5001/dogs");
-    setDogs(response.data);
-  }
-
-  getDogs();
+  useEffect(function getDogs() {
+    async function axiosGetDogs() {
+      const response = await axios.get("http://localhost:5001/dogs");
+      setDogs(response.data);
+    }
+    axiosGetDogs();
+  }, []);
 
   return (
     <div className="App">
