@@ -10,8 +10,8 @@
     "concurrently": "*",
     "json-server": "*",
     "react": "*",
-    "react-dom": "*",
-    "react-router-dom": "*",
+    "react-router": "*",
+    "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "*",
     "web-vitals": "*"
   },

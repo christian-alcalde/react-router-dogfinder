@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, useState } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 import Nav from "./Nav";
 import RoutesList from "./RoutesList";
 import "./App.css";
@@ -18,9 +19,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Nav dogs={dogs} />
-        <Routes>
-          <RoutesList dogs={dogs} />
-        </Routes>
+
+        <RoutesList dogs={dogs} />
       </BrowserRouter>
     </div>
   );
